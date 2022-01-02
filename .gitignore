@@ -1,4 +1,3 @@
 .vscode/
 xcms
 *.tar.gz
-models/const.go

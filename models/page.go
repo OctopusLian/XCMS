@@ -3,7 +3,7 @@
  * @Author: neozhang
  * @Date: 2021-12-30 21:56:24
  * @LastEditors: neozhang
- * @LastEditTime: 2022-01-02 09:12:05
+ * @LastEditTime: 2022-01-02 09:29:13
  */
 package models
 
@@ -21,7 +21,7 @@ type Page struct {
 }
 
 func init() {
-	orm.RegisterDataBase("default", "mysql", "root:123456@tcp(127.0.0.1:3306)/godb?charset=utf8", 30)
+	orm.RegisterDataBase("default", "mysql", "root:mysql123@tcp(127.0.0.1:3306)/godb?charset=utf8", 30)
 	orm.RegisterModel(new(Page))
 }
 
