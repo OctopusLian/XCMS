@@ -5,7 +5,7 @@
 ## 涉及技术栈  
 
 - Go  
-- Beego框架  
+- [Beego框架](https://beego.vip/)  
 - MySQL数据库和ORM  
 - 前端
 
@@ -35,3 +35,25 @@ bee run
 
 验证成功后即可跳转  
 ![](./res/ex1.png)  
+
+## 如果您想使用Debug方式来学习的话  
+
+### VSCode下配置  
+
+```json
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "xcms",
+            "type": "go",
+            "request": "launch",
+            "mode": "debug",
+            "program": "${workspaceFolder}/main.go",
+        }
+    ]
+}
+```

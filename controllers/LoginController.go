@@ -3,7 +3,7 @@
  * @Author: neozhang
  * @Date: 2022-01-02 09:06:55
  * @LastEditors: neozhang
- * @LastEditTime: 2022-01-02 09:06:55
+ * @LastEditTime: 2022-01-02 23:53:52
  */
 package controllers
 
@@ -24,8 +24,8 @@ func (c *LoginController) Index() {
 	method := c.Ctx.Request.Method
 	fmt.Println(method)
 	if c.Ctx.Request.Method == "POST" {
-		userkey := strings.TrimSpace(c.GetString("userkey"))
-		password := strings.TrimSpace(c.GetString("password"))
+		userkey := strings.TrimSpace(c.GetString("userkey"))   //获取前端传递过来的username
+		password := strings.TrimSpace(c.GetString("password")) //获取前端传递过来的password
 		fmt.Println(userkey)
 		fmt.Println(password)
 		//{{获取sso统一登录令牌
@@ -68,6 +68,7 @@ func (c *LoginController) Index() {
 			user := models.GetUserByName(userkey)
 			fmt.Println("set user:", user)
 			if password == user.PassWord { //跟数据库总加密后的密码做比较
+				//如果输入密码与数据库的密码一致
 				c.SetSession("user", user)
 				//c.SetSession("oauth_token",m["access_token"])//保存令牌
 				c.Redirect("/", 302)

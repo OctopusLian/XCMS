@@ -3,7 +3,7 @@
  * @Author: neozhang
  * @Date: 2022-01-02 09:10:55
  * @LastEditors: neozhang
- * @LastEditTime: 2022-01-02 09:10:56
+ * @LastEditTime: 2022-01-02 23:52:57
  */
 package models
 
@@ -44,6 +44,6 @@ func UserList(pageSize, page int) ([]*UserModel, int64) {
 func GetUserByName(userkey string) UserModel {
 	o := orm.NewOrm()
 	user := UserModel{UserKey: userkey}
-	o.Read(&user, "user_key")
+	o.Read(&user, "user_key") //根据username获取user信息
 	return user
 }

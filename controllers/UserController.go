@@ -3,7 +3,7 @@
  * @Author: neozhang
  * @Date: 2022-01-02 09:08:10
  * @LastEditors: neozhang
- * @LastEditTime: 2022-01-02 09:08:11
+ * @LastEditTime: 2022-01-02 23:45:53
  */
 
 package controllers
@@ -92,10 +92,10 @@ func (c *UserController) AddDo() {
 }
 
 func (c *UserController) Edit() {
-	userId, _ := c.GetInt("userid")
+	userId, _ := c.GetInt("userid") //获取userid
 	o := orm.NewOrm()
 	var user = models.UserModel{UserId: userId}
-	o.Read(&user)
+	o.Read(&user) //根据userid查询出user信息
 	user.PassWord = ""
 	c.Data["User"] = user
 
@@ -110,7 +110,7 @@ func (c *UserController) Edit() {
 		}
 		fmt.Println(authmap) //map[1:true 5:true]
 	}
-	type Menuitem struct {
+	type Menuitem struct { //给页面用
 		Name    string
 		Ischeck bool
 	}
