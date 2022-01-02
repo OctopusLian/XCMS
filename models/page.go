@@ -3,7 +3,7 @@
  * @Author: neozhang
  * @Date: 2021-12-30 21:56:24
  * @LastEditors: neozhang
- * @LastEditTime: 2021-12-30 23:03:37
+ * @LastEditTime: 2022-01-02 09:12:05
  */
 package models
 
@@ -21,25 +21,25 @@ type Page struct {
 }
 
 func init() {
-	orm.RegisterDataBase("default", "mysql", db)
+	orm.RegisterDataBase("default", "mysql", "root:123456@tcp(127.0.0.1:3306)/godb?charset=utf8", 30)
 	orm.RegisterModel(new(Page))
 }
 
+/*获取数据*/
 func GetPage() Page {
-	// rtn := Page{
-	// 	Website: "hellobeego.com",
-	// 	Email:   "model@beego.com",
-	// }
-	// return rtn
-
+	//rtn := Page{Website:"leixiaotian.cn",Email:"1124378213@qq.com"}
+	//return rtn
 	o := orm.NewOrm()
-	p := Page{
-		Id: 1,
-	}
+	p := Page{Id: 1}
 	err := o.Read(&p)
-	if err != nil {
-		fmt.Println(err)
-	}
+	fmt.Println(err)
 
 	return p
+}
+
+/*更新数据*/
+func UpdatePage() {
+	p := Page{Id: 1, Email: "myemail_updated"}
+	o := orm.NewOrm()
+	o.Update(&p, "Email")
 }
