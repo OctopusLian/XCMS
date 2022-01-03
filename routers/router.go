@@ -3,7 +3,7 @@
  * @Author: neozhang
  * @Date: 2021-12-30 21:45:08
  * @LastEditors: neozhang
- * @LastEditTime: 2022-01-02 09:12:27
+ * @LastEditTime: 2022-01-03 13:15:20
  */
 package routers
 
@@ -51,4 +51,7 @@ func init() {
 	beego.Router("/data/list/?:mid", &controllers.DataController{}, "*:List")
 	beego.Router("/data/edit/?:mid", &controllers.DataController{}, "Get:Edit")
 	beego.Router("/data/editdo/?:mid", &controllers.DataController{}, "*:EditDo")
+
+	//casbin
+	//beego.Router("/casbin/user", &controllers.UserController{}, "Get:cuser")
 }
