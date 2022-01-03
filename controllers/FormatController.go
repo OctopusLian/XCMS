@@ -3,7 +3,7 @@
  * @Author: neozhang
  * @Date: 2022-01-02 09:05:59
  * @LastEditors: neozhang
- * @LastEditTime: 2022-01-02 09:05:59
+ * @LastEditTime: 2022-01-03 22:35:30
  */
 package controllers
 
@@ -32,7 +32,7 @@ func (c *FormatController) Edit() {
 
 func (c *FormatController) EditDo() {
 	mid, _ := c.GetInt("mid")
-	f := c.GetString("formatstr")
+	f := c.GetString("formatstr") //提交的format信息
 
 	if 0 != mid {
 		menu := models.MenuModel{Mid: mid, Format: f}
