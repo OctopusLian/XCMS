@@ -3,7 +3,7 @@
  * @Author: neozhang
  * @Date: 2022-01-06 20:05:23
  * @LastEditors: neozhang
- * @LastEditTime: 2022-01-06 20:31:13
+ * @LastEditTime: 2022-01-06 21:24:39
  */
 package main
 
@@ -66,6 +66,9 @@ func main() {
 	//创建请求
 	r.GET("/api/v1/hello", func(c *gin.Context) {
 		fmt.Println("Hello 接收到GET请求..")
+	})
+	r.POST("/api/v1/hello", func(c *gin.Context) {
+		fmt.Println("Hello 接收到POST请求..")
 	})
 
 	r.Run(":9000") //参数为空 默认监听8080端口
