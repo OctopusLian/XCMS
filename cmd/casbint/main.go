@@ -3,7 +3,7 @@
  * @Author: neozhang
  * @Date: 2022-01-06 20:05:23
  * @LastEditors: neozhang
- * @LastEditTime: 2022-01-06 21:24:39
+ * @LastEditTime: 2022-01-06 21:33:02
  */
 package main
 
@@ -71,7 +71,7 @@ func main() {
 		fmt.Println("Hello 接收到POST请求..")
 	})
 
-	r.Run(":9000") //参数为空 默认监听8080端口
+	r.Run(":9000") //参数为空 默认监听8080端口，非空，监听9000端口
 }
 
 //拦截器
