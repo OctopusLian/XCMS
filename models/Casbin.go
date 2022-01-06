@@ -3,7 +3,7 @@
  * @Author: neozhang
  * @Date: 2022-01-03 11:32:21
  * @LastEditors: neozhang
- * @LastEditTime: 2022-01-03 13:14:33
+ * @LastEditTime: 2022-01-04 16:59:38
  */
 package models
 
@@ -27,6 +27,7 @@ type CasbinRule struct {
 }
 
 func init() {
+	//TODO
 	//orm.RegisterModel(new(CasbinRule))
 	// 实际上同步数据库在整个Beego项目中只需要执行一次，如果
 	// 您在别的地方已经同步数据库，这里就不用在执行一次 RunSyncdb

@@ -57,3 +57,8 @@ bee run
     ]
 }
 ```
+
+
+## 新增模块  
+
+在此基础上，新增[gin + casbin权限管理验证程序](/cmd/casbint/)  
